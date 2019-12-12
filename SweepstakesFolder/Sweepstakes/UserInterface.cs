@@ -47,5 +47,18 @@ namespace Sweepstakes
 
             }
         }
+        public static string InputPrize()
+        {
+            while (true)
+            {
+                Console.WriteLine("Please input sweepstakes prize:");
+                string userInput = Console.ReadLine();
+                if (userInput != "")
+                {
+                    return userInput;
+                }
+
+            }
+        }
     }
 }

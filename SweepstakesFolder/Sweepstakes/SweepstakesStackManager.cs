@@ -8,5 +8,10 @@ namespace Sweepstakes
 {
     class SweepstakesStackManager
     {
+        void InsertSweepstakes()
+        {
+            string prize=UserInterface.InputPrize();
+            Sweepstakes newSweepstakes = new Sweepstakes(prize);
+        }
     }
 }

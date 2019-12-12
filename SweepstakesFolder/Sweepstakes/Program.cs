@@ -19,12 +19,13 @@ namespace Sweepstakes
             testCase.RegisterContestant(testContestant);
             testContestant = new Contestant();
             testCase.RegisterContestant(testContestant);
-            for (int i = 1; i < testCase.currentRegistrationNumber+1; i++)
+            for (int i = 1; i < testCase.currentRegistrationNumber; i++)
             {
                 testCase.PrintContestantInfo(i);
             }
             testCase.PickWinner();
             Console.WriteLine("Winner is " + testCase.contestData[testCase.winnerNumber].firstName);
+            Console.ReadLine();
         }
     }
 }
