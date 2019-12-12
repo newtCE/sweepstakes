@@ -8,14 +8,36 @@ namespace Sweepstakes
 {
     class Sweepstakes
     {
-        public int currentRegistrationNumber = 1;     //increments with each contestant
-        public int winnerNumber;
-        public Dictionary<int, Contestant> contestData = new Dictionary<int, Contestant>();
+        int currentRegistrationNumber = 1;     //increments with each contestant
+        int winnerNumber;
+        string sweepStakesName;
+        Dictionary<int, Contestant> contestData = new Dictionary<int, Contestant>();
         public Sweepstakes(string contestName)
-        {  
+        {
+            sweepStakesName = contestName;
             Dictionary<int, Contestant> contestData = new Dictionary<int, Contestant>();
         }
-        
+        public string SweepstakesName
+        {
+            get
+            {
+                return sweepStakesName;
+            }
+        }
+        public string Winner
+        {
+            get
+            {
+                if (winnerNumber != 0)
+                {
+                    return PickWinner();
+                }
+                else
+                {
+                    return "No winner yet chosen.";
+                }
+            }
+        }
         public void RegisterContestant(Contestant contestant)
         {
             contestant.registrationNumber = currentRegistrationNumber;
@@ -37,7 +59,7 @@ namespace Sweepstakes
             {
                 winnerNumber = rng.Next(1, (currentRegistrationNumber-1));
             }
-            string winner = "winner";
+            string winner = "The Winner of this sweepstakes is "+contestData[winnerNumber].firstName+" "+contestData[winnerNumber].lastName+".";
             return winner;
         }
 
@@ -46,9 +68,9 @@ namespace Sweepstakes
             Console.WriteLine("Contestant: " + contestant.firstName + " " + contestant.lastName + "\nEmail Address: " + contestant.emailAddress);
             Console.ReadLine();
         }
-        public void PrintContestantInfo(int contestant)
+        public void PrintContestantInfo(int contestantRegistrationNumber)
         {
-            Console.WriteLine("Contestant: " + contestData[contestant].firstName + " " + contestData[contestant].lastName + "\nEmail Address: " + contestData[contestant].emailAddress);
+            Console.WriteLine("Contestant: " + contestData[contestantRegistrationNumber].firstName + " " + contestData[contestantRegistrationNumber].lastName + "\nEmail Address: " + contestData[contestantRegistrationNumber].emailAddress);
             Console.ReadLine();
         }
     }
