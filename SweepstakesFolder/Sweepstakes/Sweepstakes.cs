@@ -10,8 +10,9 @@ namespace Sweepstakes
     {
         public Sweepstakes(string contestName)
         {
-
+        Dictionary<string, string> contestData = new Dictionary<string, string>();
         }
+
         public void RegisterContestant(Contestant contestant)
         {
 
