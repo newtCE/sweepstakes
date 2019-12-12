@@ -13,6 +13,18 @@ namespace Sweepstakes
             Sweepstakes testCase=new Sweepstakes("Bike");
             Contestant testContestant = new Contestant();
             testCase.RegisterContestant(testContestant);
+            testContestant = new Contestant();
+            testCase.RegisterContestant(testContestant);
+            testContestant = new Contestant();
+            testCase.RegisterContestant(testContestant);
+            testContestant = new Contestant();
+            testCase.RegisterContestant(testContestant);
+            for (int i = 1; i < testCase.currentRegistrationNumber+1; i++)
+            {
+                testCase.PrintContestantInfo(i);
+            }
+            testCase.PickWinner();
+            Console.WriteLine("Winner is " + testCase.contestData[testCase.winnerNumber].firstName);
         }
     }
 }
