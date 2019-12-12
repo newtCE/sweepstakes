@@ -10,6 +10,9 @@ namespace Sweepstakes
     {
         static void Main(string[] args)
         {
+            Sweepstakes testCase=new Sweepstakes("Bike");
+            Contestant testContestant = new Contestant();
+            testCase.RegisterContestant(testContestant);
         }
     }
 }

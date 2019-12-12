@@ -11,7 +11,7 @@ namespace Sweepstakes
         public string firstName;
         public string lastName;
         public string emailAddress;
-        public int registrationNumber;
+        public int registrationNumber;//this number will be used to increment
 
     }
 }
