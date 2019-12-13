@@ -10,7 +10,7 @@ namespace Sweepstakes
     {
         void SelectManagerType()
         {
-            string selection=UserInterface.InputManagerType();
+            string selection=UserInterface.SelectManagerType();
             if (selection == "queue")
             {
                 SweepstakesQueueManager manager = new SweepstakesQueueManager();
