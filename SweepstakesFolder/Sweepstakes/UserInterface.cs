@@ -8,6 +8,19 @@ namespace Sweepstakes
 {
     public static class UserInterface
     {
+        public static string SelectManagerType()
+        {
+            while (true)
+            {
+                Console.WriteLine("Please input if you would like to use a 'queue' or 'stack' type manager:");
+                string userInput = Console.ReadLine();
+                if (userInput == "queue"||userInput=="stack")
+                {
+                    return userInput;
+                }
+
+            }
+        }
         public static string InputContestantFirstName()
         {
             while (true)
