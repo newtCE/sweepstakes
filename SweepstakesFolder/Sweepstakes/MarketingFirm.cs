@@ -8,9 +8,8 @@ namespace Sweepstakes
 {
     class MarketingFirm
     {
-        void SelectManagerType()
+        void SelectManagerType(string selection)
         {
-            string selection=UserInterface.SelectManagerType();
             if (selection == "queue")
             {
                 SweepstakesQueueManager manager = new SweepstakesQueueManager();
